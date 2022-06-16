@@ -1,4 +1,3 @@
-from pickle import STOP
 import string
 
 STOP_WORDS = [
@@ -36,6 +35,10 @@ def print_word_freq(file):
     file_scrubbed = [word for word in file_split_into_list if word not in STOP_WORDS]
     print(f'file_scrubbed:\n{file_scrubbed}')
 
+    # Fill dictionary with word counts
+    word_count = {}
+    
+
     
 
 
@@ -55,7 +58,3 @@ if __name__ == "__main__":
     else:
         print(f"{file} does not exist!")
         exit(1)
-
-
-#read_file.string.split
-#translate
