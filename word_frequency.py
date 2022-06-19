@@ -33,10 +33,21 @@ def print_word_freq(file):
 
     # Removing STOP_WORDS from the file
     file_scrubbed = [word for word in file_split_into_list if word not in STOP_WORDS]
-    print(f'file_scrubbed:\n{file_scrubbed}')
+    # print(f'file_scrubbed:\n{file_scrubbed}')
 
     # Fill dictionary with word counts
     word_count = {}
+    for word in file_scrubbed:
+        if word_count.get(word) == None:
+            word_count[word] = 1
+        else:
+            word_count[word] += 1
+
+    # print(word_count)
+
+    # Sorting
+    sorted_list = sorted(word_count.items(), key=lambda x:x[1], reverse = True)
+    print(sorted_list)
     
 
     
