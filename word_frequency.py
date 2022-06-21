@@ -5,12 +5,10 @@ STOP_WORDS = [
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
     'will', 'with'
 ]
-
 STOP_PUNCTUATION = [
     '.', ',', '/', ';', '[', ']', '`', '-', '=', '<', '>', '?', ':', '"', '{', '}', 
     '|', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')'
 ]
-
 
 def print_word_freq(file):
     print(f'File name: {file}')
@@ -43,17 +41,14 @@ def print_word_freq(file):
         else:
             word_count[word] += 1
 
-    # print(word_count)
-
     # Sorting
     sorted_list = sorted(word_count.items(), key=lambda x:x[1], reverse = True)
-    print(sorted_list)
+    # print(sorted_list)  
+
+    #Printing
+    for word in sorted_list:
+        print(f'{" " * (20 - len(word[0]))} {word[0]} | {word[1]} {"*" * word[1]}')
     
-
-    
-
-
-
 if __name__ == "__main__":
     import argparse
     from pathlib import Path
